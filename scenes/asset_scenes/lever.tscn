@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://wbg0nnwlkopi"]
+
+[ext_resource type="PackedScene" uid="uid://dnh8xsnrpbcsp" path="res://assets/Lever.glb" id="1_8rk8e"]
+[ext_resource type="Script" uid="uid://ckovi5lmmg7fq" path="res://lever.gd" id="2_xw5sw"]
+
+[node name="Lever" unique_id=1631798591 instance=ExtResource("1_8rk8e")]
+script = ExtResource("2_xw5sw")

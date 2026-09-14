@@ -12,16 +12,20 @@ var movement = Vector3.ZERO
 @onready var ship_node = $CSGBox3D
 
 func _physics_process(delta: float) -> void:
-	return
-	if false:
+	if Input.is_action_pressed("move_forward"):
 		movement = Vector3.FORWARD * move_speed
 	else :
 		movement.z = lerpf(movement.z, 0, deceleration_factor * delta)
+
+	$spaceship/F_B_lever.set_value(movement.z)
 	
-	if false:	
-		steer_value = lerpf(steer_value, 1,steer_speed*delta)
-	elif false:
-		steer_value = lerpf(steer_value, -1,steer_speed*delta)
+	if abs(movement.z) > 0.01:
+		if Input.is_action_pressed("move_left"):	
+			steer_value = lerpf(steer_value, 1,steer_speed*delta)
+		elif Input.is_action_pressed("move_right"):
+			steer_value = lerpf(steer_value, -1,steer_speed*delta)
+		
+	$spaceship/L_R_Lever.set_value(steer_value)
 		
 	rotation_degrees.z = steer_value * 45
 	

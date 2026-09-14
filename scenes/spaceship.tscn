@@ -2,17 +2,17 @@
 
 [ext_resource type="Script" uid="uid://da46hymo2ogrl" path="res://scenes/spaceship.gd" id="1_yqmju"]
 [ext_resource type="PackedScene" uid="uid://bv3su3k5alh2f" path="res://assets/spaceship.glb" id="3_v0rat"]
-[ext_resource type="PackedScene" uid="uid://dnh8xsnrpbcsp" path="res://assets/Lever.glb" id="3_xs8u7"]
+[ext_resource type="PackedScene" uid="uid://wbg0nnwlkopi" path="res://scenes/asset_scenes/lever.tscn" id="3_xs8u7"]
 
 [node name="Spaceship" type="CharacterBody3D" unique_id=1268409057]
 script = ExtResource("1_yqmju")
 
 [node name="spaceship" parent="." unique_id=347072524 instance=ExtResource("3_v0rat")]
 
-[node name="Lever2" parent="." unique_id=1631798591 instance=ExtResource("3_xs8u7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35215437, 0.70394796, -3.2331338)
+[node name="F_B_lever" parent="spaceship" unique_id=1631798591 instance=ExtResource("3_xs8u7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.93991184, 0.7014535, -3.1658578)
 
-[node name="Lever3" parent="." unique_id=1124405424 instance=ExtResource("3_xs8u7")]
-transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.9309309, 0.6991952, -3.2331338)
+[node name="L_R_Lever" parent="spaceship" unique_id=188669668 instance=ExtResource("3_xs8u7")]
+transform = Transform3D(-4.371139e-08, 0, -1, 0, 1, 0, 1, 0, -4.371139e-08, 0.36178112, 0.7014535, -3.1658578)
 
 [editable path="spaceship"]
