@@ -3,12 +3,12 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dvjc2qpc6lt3l"
+uid="uid://41h4veubg11n"
 valid=false
 
 [deps]
 
-source_file="res://assets/Lever.blend"
+source_file="res://assets/blender/Lever.blend"
 
 [params]
 

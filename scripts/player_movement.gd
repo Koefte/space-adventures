@@ -1,4 +1,4 @@
-extends CharacterBody3D
+extends Node3D
 
 @export var move_speed: float = 5.0
 @export var jump_velocity: float = 4.5
@@ -31,35 +31,3 @@ func _unhandled_input(event: InputEvent) -> void:
 		head.rotate_y(-event.relative.x * mouse_sensitivity)
 		camera.rotate_x(-event.relative.y * mouse_sensitivity)
 		camera.rotation.x = clampf(camera.rotation.x, -deg_to_rad(85), deg_to_rad(85))
-
-
-
-func _physics_process(delta: float) -> void:
-	if not is_on_floor():
-		velocity.y -= gravity * delta
-	
-			
-
-	
-	
-	
-	
-	
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = jump_velocity
-
-
-	
-	var input_dir := Input.get_vector("move_left", "move_right", "move_forward", "move_back")
-	var direction = (head.global_transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-	
-	
-	
-	if direction:
-		velocity.x = lerpf(velocity.x, direction.x * move_speed, acceleration * delta)
-		velocity.z = lerpf(velocity.z, direction.z * move_speed, acceleration * delta)
-	else:
-		velocity.x = lerpf(velocity.x, 0.0, acceleration * delta)
-		velocity.z = lerpf(velocity.z, 0.0, acceleration * delta)
-
-	move_and_slide()

@@ -1,6 +1,8 @@
 [gd_scene format=3 uid="uid://d8hbxfu3gmcb"]
 
+[ext_resource type="PackedScene" uid="uid://bahrqxcfm0fqi" path="res://scenes/player.tscn" id="1_0wfyh"]
 [ext_resource type="PackedScene" uid="uid://b47p2sm5qdnxp" path="res://scenes/spaceship.tscn" id="1_o5qli"]
+[ext_resource type="Script" uid="uid://c8x0i2b8ca1gi" path="res://scripts/interact.gd" id="2_sugp2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o5qli"]
 sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
@@ -24,33 +26,28 @@ transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545
 shadow_enabled = true
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=604979613]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0976691, -0.4116211, -9.866043)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0976691, -1.7110672, -9.866043)
 use_collision = true
 size = Vector3(15.687256, 0.17675781, 29.361893)
 
+[node name="Player" parent="." unique_id=1377641394 instance=ExtResource("1_0wfyh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.40988368, 0.9966736, -0.85414135)
+
+[node name="Camera3D" parent="Player/Head" parent_id_path=PackedInt32Array(1377641394, 1476790502) index="0" unique_id=419748671]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.43437707, 0)
+
+[node name="Interactor" type="Node3D" parent="Player" unique_id=1220830016]
+script = ExtResource("2_sugp2")
+
 [node name="Spaceship" parent="." unique_id=1268409057 instance=ExtResource("1_o5qli")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.56623554, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0.56623554, 0)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="." unique_id=427714606]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.032412)
+[node name="Windows" parent="Spaceship/spaceship" parent_id_path=PackedInt32Array(1268409057, 347072524) index="0" unique_id=419081125]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0017743111, 0, 0.0034601688)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="." unique_id=1356362920]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.181048, 0, -3.377962)
+[node name="Lever2" parent="Spaceship" index="1" unique_id=1631798591]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.35215437, 0.703948, -3.2331338)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="." unique_id=449554226]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.181048, 0, -9.949461)
-
-[node name="CSGBox3D5" type="CSGBox3D" parent="." unique_id=1137995771]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55094194, 0, -9.949461)
-
-[node name="CSGBox3D6" type="CSGBox3D" parent="." unique_id=819053667]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.55094194, 0, -15.447153)
-
-[node name="CSGBox3D7" type="CSGBox3D" parent="." unique_id=364821096]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8139071, 0, -15.447153)
-
-[node name="CSGBox3D8" type="CSGBox3D" parent="." unique_id=1110884596]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8139071, 0, -7.567361)
-
-[node name="CSGBox3D9" type="CSGBox3D" parent="." unique_id=1340586155]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.396099, 0, -9.302578)
+[editable path="Player"]
+[editable path="Spaceship"]
+[editable path="Spaceship/spaceship"]
