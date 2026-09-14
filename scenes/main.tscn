@@ -1,13 +1,32 @@
 [gd_scene format=3 uid="uid://d8hbxfu3gmcb"]
 
-[ext_resource type="PackedScene" uid="uid://bahrqxcfm0fqi" path="res://scenes/player.tscn" id="1_o5qli"]
+[ext_resource type="PackedScene" uid="uid://b47p2sm5qdnxp" path="res://scenes/spaceship.tscn" id="1_o5qli"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_o5qli"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_0wfyh"]
+sky_material = SubResource("ProceduralSkyMaterial_o5qli")
+
+[sub_resource type="Environment" id="Environment_sugp2"]
+background_mode = 2
+sky = SubResource("Sky_0wfyh")
+glow_enabled = true
 
 [node name="Main" type="Node3D" unique_id=1110951284]
 
-[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=604979613]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.6627326, -0.4116211, -0.46761298)
-use_collision = true
-size = Vector3(3.3398438, 0.17675781, 2.7156982)
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=391041637]
+environment = SubResource("Environment_sugp2")
 
-[node name="Node3D" parent="." unique_id=1377641394 instance=ExtResource("1_o5qli")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.17728448, 0)
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=187035001]
+transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 0, 0)
+shadow_enabled = true
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=604979613]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.0976691, -0.4116211, -9.866043)
+use_collision = true
+size = Vector3(15.687256, 0.17675781, 29.361893)
+
+[node name="Spaceship" parent="." unique_id=1268409057 instance=ExtResource("1_o5qli")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.56623554, 0)

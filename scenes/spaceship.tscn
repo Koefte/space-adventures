@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b47p2sm5qdnxp"]
+
+[ext_resource type="Script" uid="uid://da46hymo2ogrl" path="res://scenes/spaceship.gd" id="1_yqmju"]
+
+[node name="Spaceship" type="CharacterBody3D" unique_id=1268409057]
+script = ExtResource("1_yqmju")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=1518941703]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.07495117, 0, 0)
+size = Vector3(1.1499023, 1, 1)
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=932853371]
+transform = Transform3D(1, 0, 0, 0, 0.7343855, 0.6787326, 0, -0.6787326, 0.7343855, 0, 0.95842105, 0.9697366)
+current = true
+fov = 133.2
