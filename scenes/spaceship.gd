@@ -17,7 +17,7 @@ func _physics_process(delta: float) -> void:
 	else :
 		movement.z = lerpf(movement.z, 0, deceleration_factor * delta)
 
-	$spaceship/F_B_lever.set_value(movement.z)
+	$spaceship_textured/F_B_lever.set_value(movement.z)
 	
 	if abs(movement.z) > 0.01:
 		if Input.is_action_pressed("move_left"):	
@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 		elif Input.is_action_pressed("move_right"):
 			steer_value = lerpf(steer_value, -1,steer_speed*delta)
 		
-	$spaceship/L_R_Lever.set_value(steer_value)
+	$spaceship_textured/L_R_Lever.set_value(steer_value)
 		
 	rotation_degrees.z = steer_value * 45
 	

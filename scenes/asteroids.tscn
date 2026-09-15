@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://b0alx2bal2ajf"]
+
+[ext_resource type="PackedScene" uid="uid://1kkpewutwmfb" path="res://assets/asteroids.glb" id="1_hms1a"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_46dfx"]
+size = Vector3(3.060679, 2.677457, 2.6772246)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_72i4m"]
+size = Vector3(1.9747759, 1.822131, 1.78535)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_405t2"]
+size = Vector3(2.1097085, 1.8685561, 1.5176029)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tnxac"]
+size = Vector3(2.093671, 1.5543036, 1.8538654)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_u1tuw"]
+size = Vector3(2.0699227, 1.9804868, 2.3026145)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_buvfj"]
+size = Vector3(3.6067548, 3.2855494, 3.009091)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wbylb"]
+size = Vector3(3.6184154, 3.070726, 3.2103543)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dyfqn"]
+size = Vector3(3.603094, 3.2819848, 3.672674)
+
+[node name="asteroids" unique_id=1756940283 instance=ExtResource("1_hms1a")]
+
+[node name="Area3D" type="Area3D" parent="Asteroid" parent_id_path=PackedInt32Array(1118372825) index="0" unique_id=416411312]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Asteroid/Area3D" index="0" unique_id=460178570]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.5582893, 4.0709186, -0.58165336)
+shape = SubResource("BoxShape3D_46dfx")
+
+[node name="Area3D" type="Area3D" parent="Asteroid_001" parent_id_path=PackedInt32Array(406764742) index="0" unique_id=234873868]
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="Asteroid_001/Area3D" index="0" unique_id=73267667]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.2603889, -0.077563465, 0.15961188)
+shape = SubResource("BoxShape3D_72i4m")
+
+[node name="Area3D" type="Area3D" parent="Asteroid_002" parent_id_path=PackedInt32Array(840632031) index="0" unique_id=97782994]
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="Asteroid_002/Area3D" index="0" unique_id=948210302]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.6176848, -2.147151, -0.9132805)
+shape = SubResource("BoxShape3D_405t2")
+
+[node name="Area3D" type="Area3D" parent="Asteroid_003" parent_id_path=PackedInt32Array(1466332885) index="0" unique_id=513248736]
+
+[node name="CollisionShape3D4" type="CollisionShape3D" parent="Asteroid_003/Area3D" index="0" unique_id=171667432]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8496737, 1.7196898, 0.50747234)
+shape = SubResource("BoxShape3D_tnxac")
+
+[node name="Area3D" type="Area3D" parent="Asteroid_004" parent_id_path=PackedInt32Array(1189196707) index="0" unique_id=1800259858]
+
+[node name="CollisionShape3D5" type="CollisionShape3D" parent="Asteroid_004/Area3D" index="0" unique_id=1469789611]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.09306896, 2.9722245, 1.393466)
+shape = SubResource("BoxShape3D_u1tuw")
+
+[node name="Area3D" type="Area3D" parent="Asteroid_005" parent_id_path=PackedInt32Array(644101276) index="0" unique_id=1644272321]
+
+[node name="CollisionShape3D6" type="CollisionShape3D" parent="Asteroid_005/Area3D" index="0" unique_id=1921271574]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.384651, 1.3288548, -2.390205)
+shape = SubResource("BoxShape3D_buvfj")
+
+[node name="Area3D" type="Area3D" parent="Asteroid_006" parent_id_path=PackedInt32Array(434309277) index="0" unique_id=1235293171]
+
+[node name="CollisionShape3D7" type="CollisionShape3D" parent="Asteroid_006/Area3D" index="0" unique_id=915580673]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.084588, 6.2927637, -0.081012964)
+shape = SubResource("BoxShape3D_wbylb")
+
+[node name="Area3D" type="Area3D" parent="Asteroid_007" parent_id_path=PackedInt32Array(1508590889) index="0" unique_id=1733177078]
+
+[node name="CollisionShape3D8" type="CollisionShape3D" parent="Asteroid_007/Area3D" index="0" unique_id=250350034]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9288077, 8.1793, 1.1241332)
+shape = SubResource("BoxShape3D_dyfqn")
